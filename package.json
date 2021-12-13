@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/JasonAnger/angasa-store-renting#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "googleapis": "^92.0.0",
     "next": "^12.0.4",
     "react": "^17.0.2",

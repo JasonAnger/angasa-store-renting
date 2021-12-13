@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Krub", sans-serif;
+}
+
+body {
+  background-image: url("/images/cover.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+em.circle {
+  width: 45px;
+  height: 45px;
+  border: 5px solid #ef5139;
+  border-radius: 50%;
+  margin: 100px 0px -120px -35px;
+}
+
+#landing {
+  background-image: linear-gradient(0deg, #0000005e 0%, #000000bd 100%);
+}
+
+#tools .container img {
+  max-height: 40px;
+  margin: auto;
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl font-bold;
+  }
+  .faq-item {
+    @apply block bg-white shadow-lg text-black rounded my-5 px-8 py-5 cursor-pointer;
+  }
+  .faq-item * {
+    @apply transition-all duration-700 ease-in-out;
+  }
+  .faq-item h1 {
+    @apply text-xl font-bold flex;
+  }
+  .faq-item h1 svg {
+    display: block;
+    margin: 0px 0px 0px auto;
+    transform: translate(0px, 5px) rotate(0deg);
+  }
+  .faq-item h1 svg path {
+    fill: #000 !important;
+    color: #000;
+  }
+  .faq-item:hover h1,
+  .faq-item:hover h1 svg path {
+    fill: orange !important;
+    color: orange;
+  }
+  .faq-item.active h1,
+  .faq-item.active h1 svg path {
+    fill: orange !important;
+    color: orange;
+  }
+  .faq-item.active h1 svg {
+    transform: translate(0px, 5px) rotate(180deg);
+  }
+  .faq-item p {
+    @apply overflow-hidden block;
+    max-height: 0px;
+  }
+  .faq-item.active p {
+    @apply overflow-auto;
+    height: min-content !important;
+    max-height: 600px;
+    padding: 8px 0px 20px 0px;
+  }
+}
+
+.macbook {
+  background-image: url(/images/macbook-png.png);
+  position: relative;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  min-width: 90vw;
+  height: calc(90vw / 16 * 10);
+  /* transform: translate(10vw, -100px); */
+}
+.macbook::-webkit-scrollbar {
+  display: none;
+}
+.macbook-image img {
+  width: 100%;
+  height: auto;
+  max-height: unset !important;
+  border-radius: 6px;
+}
+.portfolio-item {
+  min-width: 100%;
+  padding: 2.1% 11.7% 11%;
+  opacity: 0;
+  display: none;
+  transition: all 600ms ease-in-out;
+}
+.portfolio-item.active {
+  opacity: 1;
+  display: block;
+  animation: fading 0.7s 1;
+}
+
+@keyframes fading{0%{opacity:0}100%{opacity:1}}
+
+@media screen and (min-width: 1024px) {
+  .macbook {
+    min-width: 50vw;
+    height: calc(50vw / 16 * 10);
+  }
+  .macbook-image {
+    height: calc(50vw / 16 * 10);
+  }
+  .lg\:max-w-1\/2 {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1368px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
