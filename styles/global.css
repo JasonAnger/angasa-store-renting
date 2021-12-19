@@ -74,6 +74,12 @@ em.circle {
     max-height: 600px;
     padding: 8px 0px 20px 0px;
   }
+  .faq-item.active p::-webkit-scrollbar {
+    display: none;
+  }
+  .footer-column {
+    @apply w-1/2 md:w-1/4 lg:w-1/4;
+  }
 }
 
 .macbook {

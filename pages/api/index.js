@@ -12,6 +12,12 @@ export default async function handler(req,res) {
     });
 
     const data = response.data;
-    console.log(data)
+    let faqs = await sheets.spreadsheets.values.get({
+      spreadsheetId: process.env.SHEET_ID,
+      range: `FAQs!A2:B15`,
+    });
+    data.faqs = faqs.data.values.map(item=> {
+      return {question: item[0], answer: item[1]}
+    })
     res.json(data)
 }
